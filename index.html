@@ -6,6 +6,7 @@
   <title>AKASH KUMAR GUPTA — Data Scientist & Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pbVd6X0eY3qgk3K2s3YqG1YxQqz1Y1k0QvV1F6Yj1Z6V7Q1k2c3X5Y6Z7a8b9c0dE1fG2h3i4j5k6l7m8n9o==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <meta name="description" content="Akash Kumar Gupta — Data Scientist (Mu Sigma) & Aspiring Software Engineer. Projects: Predictive Price Modeling, Olympic Medal IQ.">
   <style>
     :root{
       --bg-1: #0b1020;
@@ -22,7 +23,6 @@
     html,body{height:100%}
     body{font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(135deg,var(--bg-1),var(--bg-2));color:var(--text);margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 
-    /* Animated gradient background */
     .bg-animated{position:fixed;inset:0;z-index:-1;overflow:hidden}
     .bg-animated::before{content:'';position:absolute;inset:-20% -10% -20% -10%;background:radial-gradient(circle at 10% 20%, rgba(124,58,237,0.18), transparent 10%),radial-gradient(circle at 90% 80%, rgba(6,182,212,0.14), transparent 10%);filter:blur(60px);animation:float 10s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
@@ -58,39 +58,49 @@
 
     footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
 
-    /* small screens */
     @media(max-width:980px){.grid{grid-template-columns:1fr}.top-actions{display:none}.avatar{width:88px;height:88px}}
 
-    /* floating social */
     .social-fab{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:50}
     .social-fab a{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none}
 
-    /* subtle animate headers */
     .reveal{opacity:0;transform:translateY(8px);animation:reveal .6s forwards}
     .reveal.delay-1{animation-delay:.08s}
     .reveal.delay-2{animation-delay:.16s}
     @keyframes reveal{to{opacity:1;transform:translateY(0)}}
 
-    /* theme toggle */
     .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+
+    /* typewriter */
+    .hero{margin-top:6px}
+    .typewriter{display:inline-block;color:var(--accent-2);font-weight:700}
   </style>
 </head>
 <body>
+  <!-- ANALYTICS: Replace UA-XXXXX or G-XXXXX with your Google Analytics ID in the script below to enable tracking -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXX');
+  </script>
+  -->
+
   <div class="bg-animated"></div>
   <div class="container">
     <header>
       <div class="avatar">AK</div>
       <div>
         <h1 class="reveal">AKASH KUMAR GUPTA</h1>
-        <p class="lead reveal delay-1">Data Scientist • Software Engineer • Java, Python & ML • Cybersecurity & Cloud</p>
+        <p class="lead reveal delay-1">Data Scientist (Mu Sigma) • Aspiring Software Engineer • <span class="hero"><span id="typewriter" class="typewriter"></span></span></p>
         <div style="display:flex;gap:10px;margin-top:10px;" class="reveal delay-2">
           <a class="btn btn-primary" href="#contact">Contact / Hire</a>
-         <a class="btn" href="Akash-Kumar-Gupta.pdf" download>Download Resume</a>
-
+          <a class="btn" href="Akash-Kumar-Gupta.pdf" target="_blank">Download Resume</a>
         </div>
       </div>
       <div class="top-actions">
-        <button class="theme-toggle" id="themeBtn"><i class="fa-regular fa-moon"></i></button>
+        <button class="theme-toggle" id="themeBtn" title="Toggle theme"><i class="fa-regular fa-moon"></i></button>
       </div>
     </header>
 
@@ -100,8 +110,8 @@
           <h2>About</h2>
           <p style="color:var(--muted);margin-top:8px">I build data-driven systems and production-ready ML pipelines. I focus on backend engineering, secure data processing, and scalable model deployment. I love designing clean APIs, optimizing systems, and turning data into product features.</p>
           <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-            <span class="chip"><i class="fa-solid fa-briefcase"></i> Mu Sigma — Trainee Decision Scientist</span>
-            <span class="chip"><i class="fa-solid fa-shield"></i> Palo Alto — Cybersecurity Intern</span>
+            <span class="chip"><i class="fa-solid fa-briefcase"></i> Mu Sigma — Data Scientist</span>
+            <span class="chip"><i class="fa-solid fa-shield"></i> Palo Alto — Security Intern</span>
             <span class="chip"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE</span>
           </div>
         </div>
@@ -115,7 +125,7 @@
               <div class="meta">Python • Scikit-Learn • PyTorch • SQL • AWS</div>
               <p style="color:var(--muted);margin:8px 0 0">Built end-to-end pipeline for real estate price prediction: feature engineering, stacked models (XGBoost + NN), SHAP explainability, and a serverless inference API on AWS.</p>
               <div class="links" style="margin-top:10px">
-                <a class="link" href="https://github.com/akash-kr2812" target="_blank"><i class="fa-brands fa-github"></i> View Code</a>
+                <a class="link" href="https://github.com/akash-kr2812/predictive-price-modeling" target="_blank"><i class="fa-brands fa-github"></i> View Code</a>
               </div>
             </div>
 
@@ -124,7 +134,7 @@
               <div class="meta">Python • Time-series • Power BI • Data Viz</div>
               <p style="color:var(--muted);margin:8px 0 0">Analyzed historical Olympic metrics to produce medal-outcome forecasts and an interactive Power BI dashboard used for federation insights.</p>
               <div class="links" style="margin-top:10px">
-                <a class="link" href="https://github.com/akash-kr2812" target="_blank"><i class="fa-brands fa-github"></i> View Code & Dashboard</a>
+                <a class="link" href="https://github.com/akash-kr2812/olympic-medal-iq" target="_blank"><i class="fa-brands fa-github"></i> View Code & Dashboard</a>
               </div>
             </div>
 
@@ -134,13 +144,13 @@
         <div class="card reveal" id="experience" style="margin-top:16px">
           <h2>Experience</h2>
           <div style="margin-top:8px;color:var(--muted)">
-            <strong>Mu Sigma Business Solutions Pvt Ltd— Data Scientist</strong>
+            <strong>Mu Sigma — Data Scientist</strong>
             <div class="meta">Predictive modeling • Client delivery • Data pipelines</div>
             <p style="margin:6px 0 0">Built analytics solutions and ML pipelines for enterprise clients, focusing on accuracy and production readiness.</p>
 
             <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:12px 0">
 
-            <strong>Palo Alto Networks — Cybersecurity Intern</strong>
+            <strong>Palo Alto Networks — Security Intern</strong>
             <div class="meta">SOC tooling • Threat detection • Automation</div>
             <p style="margin:6px 0 0">Developed detection rules and automated incident triage to reduce mean time to detect in simulated environments.</p>
           </div>
@@ -186,6 +196,21 @@ Projects:
             <li><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/akash-gupta-42765620a/" target="_blank">linkedin.com/in/akash-gupta-42765620a</a></li>
             <li><strong>GitHub:</strong> <a class="link" href="https://github.com/akash-kr2812" target="_blank">github.com/akash-kr2812</a></li>
           </ul>
+
+          <div style="margin-top:12px">
+            <!-- Simple contact form via Formspree (replace action URL with your Formspree endpoint) -->
+            <form action="https://formspree.io/f/myform" method="POST" target="_blank">
+              <input type="hidden" name="_subject" value="Website Contact">
+              <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+                <input name="name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" required>
+                <input name="email" placeholder="Your email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" required>
+                <textarea name="message" placeholder="Message" rows="3" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" required></textarea>
+                <button class="btn btn-primary" type="submit">Send Message</button>
+              </div>
+            </form>
+            <p style="color:var(--muted);font-size:12px;margin-top:8px">(Form uses Formspree — replace the action URL with your Formspree form endpoint so messages go to your email.)</p>
+          </div>
+
         </div>
 
       </aside>
@@ -202,7 +227,22 @@ Projects:
   </div>
 
   <script>
-    // simple theme toggle (dark/light) — saves to localStorage
+    // typewriter intro
+    const phrases = ['ML Engineer', 'Backend Developer', 'Cybersecurity Enthusiast', 'Cloud Practitioner'];
+    const el = document.getElementById('typewriter');
+    let ix = 0, char = 0, forward = true;
+    function type(){
+      const p = phrases[ix];
+      if(forward){
+        char++;
+        el.textContent = p.slice(0,char);
+        if(char===p.length){forward=false;setTimeout(type,1000);return}
+      } else { char--; el.textContent = p.slice(0,char); if(char===0){forward=true;ix=(ix+1)%phrases.length} }
+      setTimeout(type, forward?90:40);
+    }
+    document.addEventListener('DOMContentLoaded',()=>type());
+
+    // simple theme toggle (dark/light)
     const themeBtn = document.getElementById('themeBtn');
     function setLight(){
       document.documentElement.style.setProperty('--bg-1','#f7fafc');
@@ -210,7 +250,6 @@ Projects:
       document.documentElement.style.setProperty('--text','#0b1220');
       document.documentElement.style.setProperty('--muted','#475569');
       document.documentElement.style.setProperty('--glass-border','rgba(11,17,34,0.04)');
-      document.documentElement.style.setProperty('--card','rgba(11,17,34,0.02)');
       localStorage.setItem('theme','light');
       themeBtn.innerHTML='<i class="fa-regular fa-sun"></i>'
     }
@@ -223,9 +262,7 @@ Projects:
       localStorage.setItem('theme','dark');
       themeBtn.innerHTML='<i class="fa-regular fa-moon"></i>'
     }
-    themeBtn.addEventListener('click',()=>{
-      if(localStorage.getItem('theme')==='light') setDark(); else setLight();
-    })
+    themeBtn.addEventListener('click',()=>{ if(localStorage.getItem('theme')==='light') setDark(); else setLight(); })
     if(localStorage.getItem('theme')==='light') setLight(); else setDark();
 
     // reveal animations on load
