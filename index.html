@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AKASH KUMAR GUPTA — Data Scientist & Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--text:#e6eef8}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(180deg,#071029 0%,#071827 100%);color:var(--text);margin:0}
+    .container{max-width:980px;margin:36px auto;padding:28px;background:rgba(255,255,255,0.03);border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:112px;height:112px;border-radius:12px;background:linear-gradient(90deg,rgba(6,182,212,0.12),rgba(124,58,237,0.08));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:var(--accent)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    .top-actions{margin-left:auto;display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--text);cursor:pointer;text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#7c3aed);border:none}
+    section{margin-top:26px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px}
+    .card{background:var(--card);padding:18px;border-radius:10px}
+    h2{margin:0 0 10px;font-size:18px}
+    ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 0;list-style:none}
+    ul.skills li{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:var(--muted);font-size:13px}
+    .projects{display:flex;flex-direction:column;gap:12px}
+    .project{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    .meta{color:var(--muted);font-size:13px}
+    footer{margin-top:26px;color:var(--muted);font-size:13px}
+    .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    a.link{color:var(--accent);text-decoration:none}
+    pre.code{background:#071827;padding:12px;border-radius:8px;overflow:auto}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.top-actions{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">AK</div>
+      <div>
+        <h1>AKASH KUMAR GUPTA</h1>
+        <p class="lead">Data Scientist (Mu Sigma) • Aspiring Software Engineer • Java, Python & ML practitioner • Cybersecurity & Cloud enthusiast</p>
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <a class="btn btn-primary" href="#contact">Contact / Hire</a>
+          <a class="btn" href="#resume">Download Resume</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div>
+
+        <div class="card">
+          <h2>About</h2>
+          <p style="color:var(--muted);margin-top:8px">
+            I am a Data Scientist trained at Mu Sigma with expertise in backend systems, machine learning, analytics, and cloud deployment.
+            I build predictive models, scalable APIs, secure systems, and dashboards that drive business decisions.
+          </p>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2 id="projects">Projects</h2>
+          <div class="projects">
+
+            <div class="project">
+              <strong>Predictive Price Modeling</strong>
+              <div class="meta">Python • Scikit-Learn • PyTorch • SQL • AWS • Role: Data Scientist</div>
+              <p style="color:var(--muted);margin:8px 0 0">
+                Built end-to-end pipeline for real estate price prediction using ML models like XGBoost, LightGBM, and neural nets.
+                Added SHAP explainability and served predictions via AWS Lambda + API Gateway.
+              </p>
+              <div style="margin-top:8px">
+                <a class="link" href="https://github.com/akash-kr2812">View Code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <strong>Olympic Medal IQ</strong>
+              <div class="meta">Python • Data Analysis • Power BI • Role: Data Scientist / Analyst</div>
+              <p style="color:var(--muted);margin:8px 0 0">
+                Analyzed decades of Olympic data to build medal prediction models & insights dashboards.
+                Delivered a Power BI dashboard that helps federations track country-wise performance trends.
+              </p>
+              <div style="margin-top:8px">
+                <a class="link" href="https://github.com/akash-kr2812">View Code & Dashboard</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card" id="experience" style="margin-top:16px">
+          <h2>Experience</h2>
+          <div style="margin-top:8px;color:var(--muted)">
+
+            <strong>Mu Sigma — Data Scientist / Analyst</strong>
+            <div class="meta">Data Science • Machine Learning • Client Delivery</div>
+            <p style="margin:6px 0 0">Worked on predictive analytics, dashboards, and machine learning pipelines.</p>
+
+            <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:12px 0">
+
+            <strong>Palo Alto Networks — Security Intern</strong>
+            <div class="meta">Cybersecurity • Threat Detection • Automation</div>
+            <p style="margin:6px 0 0">Built detection rules, automated phishing triage, and worked with SIEM tools.</p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h2>Skills</h2>
+          <ul class="skills">
+            <li>C</li><li>C++</li><li>Java</li><li>Python</li><li>SQL</li><li>Oracle</li><li>AWS</li><li>Tableau</li><li>Power BI</li>
+            <li>PyTorch</li><li>Scikit-Learn</li><li>Data Science</li><li>Machine Learning</li><li>Deep Learning</li>
+            <li>Cybersecurity</li><li>Cloud</li><li>Generative AI</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px" id="resume">
+          <h2>Resume</h2>
+          <pre class="code">
+AKASH KUMAR GUPTA
+Data Scientist / Aspiring Software Engineer
+Email: work.akashgupta2001@gmail.com
+Phone: +91 9304138792
+
+Summary:
+Data Scientist trained at Mu Sigma with experience in ML models, dashboards, backend systems,
+and security-focused engineering. Skilled in Python, Java, AWS, SQL, and analytics tools.
+
+Projects:
+- Predictive Price Modeling — end-to-end ML pipeline with AWS deployment.
+- Olympic Medal IQ — predictive analytics + dashboards for Olympic insights.
+
+Experience:
+- Mu Sigma — Data Scientist / Analyst
+- Palo Alto Networks — Cybersecurity Intern
+
+Education:
+- B.Tech Computer Science
+
+Certifications:
+- JPMorgan Chase Software Engineering (Forage)
+          </pre>
+        </div>
+
+        <div class="card" style="margin-top:16px" id="contact">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a class="link" href="mailto:work.akashgupta2001@gmail.com">work.akashgupta2001@gmail.com</a></li>
+            <li><strong>Phone:</strong> +91 9304138792</li>
+            <li><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/akash-gupta-42765620a/">linkedin.com/in/akash-gupta-42765620a</a></li>
+            <li><strong>GitHub:</strong> <a class="link" href="https://github.com/akash-kr2812">github.com/akash-kr2812</a></li>
+          </ul>
+        </div>
+
+      </aside>
+    </section>
+
+    <footer>
+      © 2025 Akash Kumar Gupta • Portfolio Website
+    </footer>
+
+  </div>
+</body>
+</html>
