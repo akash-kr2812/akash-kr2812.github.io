@@ -5,124 +5,163 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>AKASH KUMAR GUPTA — Data Scientist & Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pbVd6X0eY3qgk3K2s3YqG1YxQqz1Y1k0QvV1F6Yj1Z6V7Q1k2c3X5Y6Z7a8b9c0dE1fG2h3i4j5k6l7m8n9o==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--text:#e6eef8}
+    :root{
+      --bg-1: #0b1020;
+      --bg-2: #071827;
+      --glass: rgba(255,255,255,0.04);
+      --card: rgba(255,255,255,0.03);
+      --accent: #7c3aed;
+      --accent-2: #06b6d4;
+      --muted: #9fb0c8;
+      --text: #e6eef8;
+      --glass-border: rgba(255,255,255,0.06);
+    }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(180deg,#071029 0%,#071827 100%);color:var(--text);margin:0}
-    .container{max-width:980px;margin:36px auto;padding:28px;background:rgba(255,255,255,0.03);border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
-    header{display:flex;gap:20px;align-items:center}
-    .avatar{width:112px;height:112px;border-radius:12px;background:linear-gradient(90deg,rgba(6,182,212,0.12),rgba(124,58,237,0.08));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:var(--accent)}
-    h1{margin:0;font-size:28px}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(135deg,var(--bg-1),var(--bg-2));color:var(--text);margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+    /* Animated gradient background */
+    .bg-animated{position:fixed;inset:0;z-index:-1;overflow:hidden}
+    .bg-animated::before{content:'';position:absolute;inset:-20% -10% -20% -10%;background:radial-gradient(circle at 10% 20%, rgba(124,58,237,0.18), transparent 10%),radial-gradient(circle at 90% 80%, rgba(6,182,212,0.14), transparent 10%);filter:blur(60px);animation:float 10s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
+
+    .container{max-width:1100px;margin:40px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);border:1px solid var(--glass-border);box-shadow:0 10px 50px rgba(2,6,23,0.6)}
+
+    header{display:flex;align-items:center;gap:20px}
+    .avatar{width:110px;height:110px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
+    h1{margin:0;font-size:26px;letter-spacing:0.6px}
     p.lead{color:var(--muted);margin:6px 0 0}
-    .top-actions{margin-left:auto;display:flex;gap:10px}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--text);cursor:pointer;text-decoration:none}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#7c3aed);border:none}
-    section{margin-top:26px}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px}
-    .card{background:var(--card);padding:18px;border-radius:10px}
-    h2{margin:0 0 10px;font-size:18px}
+
+    .top-actions{margin-left:auto;display:flex;gap:8px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer;text-decoration:none;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;box-shadow:0 8px 30px rgba(6,182,212,0.06)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid var(--glass-border)}
+    h2{margin:0 0 12px;font-size:18px}
+
     ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 0;list-style:none}
-    ul.skills li{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:var(--muted);font-size:13px}
-    .projects{display:flex;flex-direction:column;gap:12px}
-    .project{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
-    .meta{color:var(--muted);font-size:13px}
-    footer{margin-top:26px;color:var(--muted);font-size:13px}
-    .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-    a.link{color:var(--accent);text-decoration:none}
-    pre.code{background:#071827;padding:12px;border-radius:8px;overflow:auto}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}.top-actions{display:none}}
+    ul.skills li{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.03)}
+
+    .projects{display:flex;flex-direction:column;gap:14px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);transition:transform .28s ease,box-shadow .28s ease;border:1px solid rgba(255,255,255,0.02)}
+    .project:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(2,6,23,0.5)}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    .project .links{margin-top:10px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:13px}
+
+    aside .card {position:sticky;top:28px}
+    .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+    a.link{color:var(--accent-2);text-decoration:none}
+
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small screens */
+    @media(max-width:980px){.grid{grid-template-columns:1fr}.top-actions{display:none}.avatar{width:88px;height:88px}}
+
+    /* floating social */
+    .social-fab{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:50}
+    .social-fab a{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none}
+
+    /* subtle animate headers */
+    .reveal{opacity:0;transform:translateY(8px);animation:reveal .6s forwards}
+    .reveal.delay-1{animation-delay:.08s}
+    .reveal.delay-2{animation-delay:.16s}
+    @keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+    /* theme toggle */
+    .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
   </style>
 </head>
 <body>
+  <div class="bg-animated"></div>
   <div class="container">
     <header>
       <div class="avatar">AK</div>
       <div>
-        <h1>AKASH KUMAR GUPTA</h1>
-        <p class="lead">Data Scientist (Mu Sigma) • Aspiring Software Engineer • Java, Python & ML practitioner • Cybersecurity & Cloud enthusiast</p>
-        <div style="display:flex;gap:10px;margin-top:8px;">
+        <h1 class="reveal">AKASH KUMAR GUPTA</h1>
+        <p class="lead reveal delay-1">Data Scientist • Software Engineer • Java, Python & ML • Cybersecurity & Cloud</p>
+        <div style="display:flex;gap:10px;margin-top:10px;" class="reveal delay-2">
           <a class="btn btn-primary" href="#contact">Contact / Hire</a>
-          <a class="btn" href="Akash-Kumar-Gupta.pdf" download>Download Resume</a>
+         <a class="btn" href="Akash-Kumar-Gupta.pdf" download>Download Resume</a>
+
         </div>
+      </div>
+      <div class="top-actions">
+        <button class="theme-toggle" id="themeBtn"><i class="fa-regular fa-moon"></i></button>
       </div>
     </header>
 
     <section class="grid">
       <div>
-
-        <div class="card">
+        <div class="card reveal">
           <h2>About</h2>
-          <p style="color:var(--muted);margin-top:8px">
-            I am a Data Scientist trained at Mu Sigma with expertise in backend systems, machine learning, analytics, and cloud deployment.
-            I build predictive models, scalable APIs, secure systems, and dashboards that drive business decisions.
-          </p>
+          <p style="color:var(--muted);margin-top:8px">I build data-driven systems and production-ready ML pipelines. I focus on backend engineering, secure data processing, and scalable model deployment. I love designing clean APIs, optimizing systems, and turning data into product features.</p>
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip"><i class="fa-solid fa-briefcase"></i> Mu Sigma — Trainee Decision Scientist</span>
+            <span class="chip"><i class="fa-solid fa-shield"></i> Palo Alto — Cybersecurity Intern</span>
+            <span class="chip"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE</span>
+          </div>
         </div>
 
-        <div class="card" style="margin-top:16px">
-          <h2 id="projects">Projects</h2>
+        <div class="card reveal" style="margin-top:16px">
+          <h2 id="projects">Selected Projects</h2>
           <div class="projects">
 
             <div class="project">
               <strong>Predictive Price Modeling</strong>
-              <div class="meta">Python • Scikit-Learn • PyTorch • SQL • AWS • Role: Data Scientist</div>
-              <p style="color:var(--muted);margin:8px 0 0">
-                Built end-to-end pipeline for real estate price prediction using ML models like XGBoost, LightGBM, and neural nets.
-                Added SHAP explainability and served predictions via AWS Lambda + API Gateway.
-              </p>
-              <div style="margin-top:8px">
-                <a class="link" href="https://github.com/akash-kr2812">View Code</a>
+              <div class="meta">Python • Scikit-Learn • PyTorch • SQL • AWS</div>
+              <p style="color:var(--muted);margin:8px 0 0">Built end-to-end pipeline for real estate price prediction: feature engineering, stacked models (XGBoost + NN), SHAP explainability, and a serverless inference API on AWS.</p>
+              <div class="links" style="margin-top:10px">
+                <a class="link" href="https://github.com/akash-kr2812" target="_blank"><i class="fa-brands fa-github"></i> View Code</a>
               </div>
             </div>
 
             <div class="project">
               <strong>Olympic Medal IQ</strong>
-              <div class="meta">Python • Data Analysis • Power BI • Role: Data Scientist / Analyst</div>
-              <p style="color:var(--muted);margin:8px 0 0">
-                Analyzed decades of Olympic data to build medal prediction models & insights dashboards.
-                Delivered a Power BI dashboard that helps federations track country-wise performance trends.
-              </p>
-              <div style="margin-top:8px">
-                <a class="link" href="https://github.com/akash-kr2812">View Code & Dashboard</a>
+              <div class="meta">Python • Time-series • Power BI • Data Viz</div>
+              <p style="color:var(--muted);margin:8px 0 0">Analyzed historical Olympic metrics to produce medal-outcome forecasts and an interactive Power BI dashboard used for federation insights.</p>
+              <div class="links" style="margin-top:10px">
+                <a class="link" href="https://github.com/akash-kr2812" target="_blank"><i class="fa-brands fa-github"></i> View Code & Dashboard</a>
               </div>
             </div>
 
           </div>
         </div>
 
-        <div class="card" id="experience" style="margin-top:16px">
+        <div class="card reveal" id="experience" style="margin-top:16px">
           <h2>Experience</h2>
           <div style="margin-top:8px;color:var(--muted)">
-
-            <strong>Mu Sigma — Data Scientist / Analyst</strong>
-            <div class="meta">Data Science • Machine Learning • Client Delivery</div>
-            <p style="margin:6px 0 0">Worked on predictive analytics, dashboards, and machine learning pipelines.</p>
+            <strong>Mu Sigma Business Solutions Pvt Ltd— Data Scientist</strong>
+            <div class="meta">Predictive modeling • Client delivery • Data pipelines</div>
+            <p style="margin:6px 0 0">Built analytics solutions and ML pipelines for enterprise clients, focusing on accuracy and production readiness.</p>
 
             <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:12px 0">
 
-            <strong>Palo Alto Networks — Security Intern</strong>
-            <div class="meta">Cybersecurity • Threat Detection • Automation</div>
-            <p style="margin:6px 0 0">Built detection rules, automated phishing triage, and worked with SIEM tools.</p>
-
+            <strong>Palo Alto Networks — Cybersecurity Intern</strong>
+            <div class="meta">SOC tooling • Threat detection • Automation</div>
+            <p style="margin:6px 0 0">Developed detection rules and automated incident triage to reduce mean time to detect in simulated environments.</p>
           </div>
         </div>
 
       </div>
 
       <aside>
-        <div class="card">
+        <div class="card reveal">
           <h2>Skills</h2>
           <ul class="skills">
-            <li>C</li><li>C++</li><li>Java</li><li>Python</li><li>SQL</li><li>Oracle</li><li>AWS</li><li>Tableau</li><li>Power BI</li>
-            <li>PyTorch</li><li>Scikit-Learn</li><li>Data Science</li><li>Machine Learning</li><li>Deep Learning</li>
-            <li>Cybersecurity</li><li>Cloud</li><li>Generative AI</li>
+            <li>C</li><li>C++</li><li>Java</li><li>Python</li><li>SQL</li><li>Oracle</li><li>AWS</li>
+            <li>Tableau</li><li>Power BI</li><li>PyTorch</li><li>Scikit-Learn</li><li>Data Science</li>
+            <li>Machine Learning</li><li>Deep Learning</li><li>Cybersecurity</li><li>Cloud</li><li>Generative AI</li>
           </ul>
         </div>
 
-        <div class="card" style="margin-top:16px" id="resume">
+        <div class="card reveal" style="margin-top:16px" id="resume">
           <h2>Resume</h2>
-          <pre class="code">
-AKASH KUMAR GUPTA
-Data Scientist / Aspiring Software Engineer
+          <pre class="code" style="background:transparent;border:none;padding:0;color:var(--muted);font-size:13px">AKASH KUMAR GUPTA
+Data Scientist / Software Engineer
 Email: work.akashgupta2001@gmail.com
 Phone: +91 9304138792
 
@@ -132,32 +171,20 @@ and security-focused engineering. Skilled in Python, Java, AWS, SQL, and analyti
 
 Projects:
 - Predictive Price Modeling — end-to-end ML pipeline with AWS deployment.
-- Olympic Medal IQ — predictive analytics + dashboards for Olympic insights.
-
-Experience:
-- Mu Sigma — Data Scientist / Analyst
-- Palo Alto Networks — Cybersecurity Intern
-
-Education:
-- B.Tech Computer Science
-
-Certifications:
-- JPMorgan Chase Software Engineering (Forage)
-- GOLDMAN SACHS Software Engineering Experience - Forage
-- Cyber Simulation Training - DELOITTE Australia
-- Oracle Cloud Infrastructure 2025 Certified:
-    OCI AI Foundations Associate
-    OCI Data Science Professional
-          </pre>
+- Olympic Medal IQ — predictive analytics + dashboards for Olympic insights.</pre>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-primary" href="mailto:work.akashgupta2001@gmail.com">Email Me</a>
+          </div>
         </div>
 
-        <div class="card" style="margin-top:16px" id="contact">
+        <div class="card reveal" style="margin-top:16px" id="contact">
           <h2>Contact</h2>
           <ul class="contact-list">
             <li><strong>Email:</strong> <a class="link" href="mailto:work.akashgupta2001@gmail.com">work.akashgupta2001@gmail.com</a></li>
             <li><strong>Phone:</strong> +91 9304138792</li>
-            <li><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/akash-gupta-42765620a/">linkedin.com/in/akash-gupta-42765620a</a></li>
-            <li><strong>GitHub:</strong> <a class="link" href="https://github.com/akash-kr2812">github.com/akash-kr2812</a></li>
+            <li><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/akash-gupta-42765620a/" target="_blank">linkedin.com/in/akash-gupta-42765620a</a></li>
+            <li><strong>GitHub:</strong> <a class="link" href="https://github.com/akash-kr2812" target="_blank">github.com/akash-kr2812</a></li>
           </ul>
         </div>
 
@@ -165,10 +192,46 @@ Certifications:
     </section>
 
     <footer>
-      © 2025 Akash Kumar Gupta • Portfolio Website
+      © 2025 Akash Kumar Gupta • Built with focus on data, systems & security
     </footer>
-
   </div>
+
+  <div class="social-fab">
+    <a href="https://github.com/akash-kr2812" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/akash-gupta-42765620a/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+
+  <script>
+    // simple theme toggle (dark/light) — saves to localStorage
+    const themeBtn = document.getElementById('themeBtn');
+    function setLight(){
+      document.documentElement.style.setProperty('--bg-1','#f7fafc');
+      document.documentElement.style.setProperty('--bg-2','#eef2ff');
+      document.documentElement.style.setProperty('--text','#0b1220');
+      document.documentElement.style.setProperty('--muted','#475569');
+      document.documentElement.style.setProperty('--glass-border','rgba(11,17,34,0.04)');
+      document.documentElement.style.setProperty('--card','rgba(11,17,34,0.02)');
+      localStorage.setItem('theme','light');
+      themeBtn.innerHTML='<i class="fa-regular fa-sun"></i>'
+    }
+    function setDark(){
+      document.documentElement.style.setProperty('--bg-1','#0b1020');
+      document.documentElement.style.setProperty('--bg-2','#071827');
+      document.documentElement.style.setProperty('--text','#e6eef8');
+      document.documentElement.style.setProperty('--muted','#9fb0c8');
+      document.documentElement.style.setProperty('--glass-border','rgba(255,255,255,0.06)');
+      localStorage.setItem('theme','dark');
+      themeBtn.innerHTML='<i class="fa-regular fa-moon"></i>'
+    }
+    themeBtn.addEventListener('click',()=>{
+      if(localStorage.getItem('theme')==='light') setDark(); else setLight();
+    })
+    if(localStorage.getItem('theme')==='light') setLight(); else setDark();
+
+    // reveal animations on load
+    document.addEventListener('DOMContentLoaded',()=>{
+      document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.opacity=1})
+    })
+  </script>
 </body>
 </html>
-
