@@ -1,274 +1,126 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AKASH KUMAR GUPTA — Data Scientist & Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pbVd6X0eY3qgk3K2s3YqG1YxQqz1Y1k0QvV1F6Yj1Z6V7Q1k2c3X5Y6Z7a8b9c0dE1fG2h3i4j5k6l7m8n9o==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <meta name="description" content="Akash Kumar Gupta — Data Scientist & Software Engineer. Projects: Predictive Price Modeling, Olympic Medal IQ.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akash Kumar Gupta — Data Scientist</title>
   <style>
-    :root{
-      --bg-1: #0b1020;
-      --bg-2: #071827;
-      --glass: rgba(255,255,255,0.04);
-      --card: rgba(255,255,255,0.03);
-      --accent: #7c3aed;
-      --accent-2: #06b6d4;
-      --muted: #9fb0c8;
-      --text: #e6eef8;
-      --glass-border: rgba(255,255,255,0.06);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(135deg,var(--bg-1),var(--bg-2));color:var(--text);margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-
-    .bg-animated{position:fixed;inset:0;z-index:-1;overflow:hidden}
-    .bg-animated::before{content:'';position:absolute;inset:-20% -10% -20% -10%;background:radial-gradient(circle at 10% 20%, rgba(124,58,237,0.18), transparent 10%),radial-gradient(circle at 90% 80%, rgba(6,182,212,0.14), transparent 10%);filter:blur(60px);animation:float 10s ease-in-out infinite}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
-
-    .container{max-width:1100px;margin:40px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);border:1px solid var(--glass-border);box-shadow:0 10px 50px rgba(2,6,23,0.6)}
-
-    header{display:flex;align-items:center;gap:20px}
-    .avatar{width:110px;height:110px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
-    h1{margin:0;font-size:26px;letter-spacing:0.6px}
-    p.lead{color:var(--muted);margin:6px 0 0}
-
-    .top-actions{margin-left:auto;display:flex;gap:8px}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer;text-decoration:none;font-weight:600}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;box-shadow:0 8px 30px rgba(6,182,212,0.06)}
-
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:24px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid var(--glass-border)}
-    h2{margin:0 0 12px;font-size:18px}
-
-    ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 0;list-style:none}
-    ul.skills li{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.03)}
-
-    .projects{display:flex;flex-direction:column;gap:14px}
-    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);transition:transform .28s ease,box-shadow .28s ease;border:1px solid rgba(255,255,255,0.02)}
-    .project:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(2,6,23,0.5)}
-    .meta{color:var(--muted);font-size:13px;margin-top:6px}
-    .project .links{margin-top:10px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:13px}
-
-    aside .card {position:sticky;top:28px}
-    .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-    a.link{color:var(--accent-2);text-decoration:none}
-
-    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
-
-    @media(max-width:980px){.grid{grid-template-columns:1fr}.top-actions{display:none}.avatar{width:88px;height:88px}}
-
-    .social-fab{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:50}
-    .social-fab a{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none}
-
-    .reveal{opacity:0;transform:translateY(8px);animation:reveal .6s forwards}
-    .reveal.delay-1{animation-delay:.08s}
-    .reveal.delay-2{animation-delay:.16s}
-    @keyframes reveal{to{opacity:1;transform:translateY(0)}}
-
-    .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
-
-    /* typewriter */
-    .hero{margin-top:6px}
-    .typewriter{display:inline-block;color:var(--accent-2);font-weight:700}
+    :root{--accent:#0b5fff;--muted:#666;}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#f7f9fc;color:#0b1a2b}
+    .container{max-width:900px;margin:40px auto;padding:28px;background:#fff;border-radius:12px;box-shadow:0 6px 30px rgba(9,30,66,.08)}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .name{font-size:22px;font-weight:700}
+    .sub{color:var(--muted);font-size:13px}
+    .cols{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    h3{margin:12px 0 6px;color:#071331}
+    .card{padding:12px;border-radius:8px;background:#fbfcfe;border:1px solid #eef3ff}
+    ul{margin:8px 0 0;padding-left:18px}
+    .skill{display:inline-block;background:#eef5ff;color:var(--accent);padding:6px 8px;margin:6px 6px 0;border-radius:6px;font-size:13px}
+    a.button{display:inline-block;padding:8px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;margin-left:10px}
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:800px){.cols{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <!-- ANALYTICS: Replace UA-XXXXX or G-XXXXX with your Google Analytics ID in the script below to enable tracking -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXX');
-  </script>
-  -->
-
-  <div class="bg-animated"></div>
   <div class="container">
     <header>
-      <div class="avatar">AK</div>
       <div>
-        <h1 class="reveal">AKASH KUMAR GUPTA</h1>
-        <p class="lead reveal delay-1">Data Scientist • Software Engineer • <span class="hero"><span id="typewriter" class="typewriter"></span></span></p>
-        <div style="display:flex;gap:10px;margin-top:10px;" class="reveal delay-2">
-          <a class="btn btn-primary" href="#contact">Contact / Hire</a>
-          <a class="btn" href="Akash-Kumar-Gupta.pdf" target="_blank">Download Resume</a>
+        <div class="name">Akash Kumar Gupta</div>
+        <div class="sub">Data Scientist • Decision Scientist — Predictive Modeling • Forecasting • Cloud ML (OCI)</div>
+        <div style="margin-top:8px;font-size:14px">
+          <span class="sub">📞 +91 9304138792</span> &nbsp; • &nbsp;
+          <a href="mailto:work.akashgupta2001@gmail.com">work.akashgupta2001@gmail.com</a> &nbsp; • &nbsp;
+          <a href="#" target="_blank">LinkedIn</a>
+          <a class="button" href="#" target="_blank">Download Resume (PDF)</a>
         </div>
       </div>
-      <div class="top-actions">
-        <button class="theme-toggle" id="themeBtn" title="Toggle theme"><i class="fa-regular fa-moon"></i></button>
+      <div style="text-align:right">
+        <div style="font-weight:700;color:#0b5fff">Open to: Data Scientist / ML Engineer roles</div>
+        <div class="sub" style="margin-top:8px">Location: India • Available: Immediately</div>
       </div>
     </header>
 
-    <section class="grid">
-      <div>
-        <div class="card reveal">
-          <h2>About</h2>
-          <p style="color:var(--muted);margin-top:8px">I build data-driven systems and production-ready ML pipelines. I focus on backend engineering, secure data processing, and scalable model deployment. I love designing clean APIs, optimizing systems, and turning data into product features.</p>
-          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-            <span class="chip"><i class="fa-solid fa-briefcase"></i> Mu Sigma — Data Scientist</span>
-            <span class="chip"><i class="fa-solid fa-shield"></i> Palo Alto — Security Intern</span>
-            <span class="chip"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE</span>
+    <div class="cols">
+      <!-- Left column -->
+      <main>
+        <section class="card" style="margin-bottom:14px">
+          <h3>Experience</h3>
+          <div>
+            <strong>Mu Sigma — Trainee Decision Scientist</strong> <span class="sub">Oct 2024 – Feb 2025</span>
+            <ul>
+              <li>Performed EDA and predictive modeling using Python & SQL; built dashboards for stakeholders. (Client-facing analytics)</li>
+              <li>Trained regression & classification models to improve decision quality and reduce manual errors.</li>
+            </ul>
           </div>
-        </div>
-
-        <div class="card reveal" style="margin-top:16px">
-          <h2 id="projects">Selected Projects</h2>
-          <div class="projects">
-
-            <div class="project">
-              <strong>Predictive Price Modeling</strong>
-              <div class="meta">Python • Scikit-Learn • PyTorch • SQL • AWS</div>
-              <p style="color:var(--muted);margin:8px 0 0">Built end-to-end pipeline for real estate price prediction: feature engineering, stacked models (XGBoost + NN), SHAP explainability, and a serverless inference API on AWS.</p>
-              <div class="links" style="margin-top:10px">
-                <a class="link" href="https://github.com/akash-kr2812/predictive-price-modeling" target="_blank"><i class="fa-brands fa-github"></i> View Code</a>
-              </div>
-            </div>
-
-            <div class="project">
-              <strong>Olympic Medal IQ</strong>
-              <div class="meta">Python • Time-series • Power BI • Data Viz</div>
-              <p style="color:var(--muted);margin:8px 0 0">Analyzed historical Olympic metrics to produce medal-outcome forecasts and an interactive Power BI dashboard used for federation insights.</p>
-              <div class="links" style="margin-top:10px">
-                <a class="link" href="https://github.com/akash-kr2812/olympic-medal-iq" target="_blank"><i class="fa-brands fa-github"></i> View Code & Dashboard</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="card reveal" id="experience" style="margin-top:16px">
-          <h2>Experience</h2>
-          <div style="margin-top:8px;color:var(--muted)">
-            <strong>Trainee Decision Scientist - Mu Sigma Business Solutions Pvt Ltd</strong>
-            <div class="meta">Predictive modeling • Client delivery • Data pipelines</div>
-            <p style="margin:6px 0 0">Built analytics solutions and ML pipelines for enterprise clients, focusing on accuracy and production readiness.</p>
-
-            <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:12px 0">
-
-            <strong>Cybersecurity Intern - Palo Alto Networks</strong>
-            <div class="meta">SOC tooling • Threat detection • Automation</div>
-            <p style="margin:6px 0 0">Developed detection rules and automated incident triage to reduce mean time to detect in simulated environments.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <aside>
-        <div class="card reveal">
-          <h2>Skills</h2>
-          <ul class="skills">
-            <li>C</li><li>C++</li><li>Java</li><li>Python</li><li>SQL</li><li>Oracle</li><li>AWS</li>
-            <li>Tableau</li><li>Power BI</li><li>PyTorch</li><li>Scikit-Learn</li><li>Data Science</li>
-            <li>Machine Learning</li><li>Deep Learning</li><li>Cybersecurity</li><li>Cloud</li><li>Generative AI</li>
-          </ul>
-        </div>
-
-        <div class="card reveal" style="margin-top:16px" id="resume">
-          <h2>Resume</h2>
-          <pre class="code" style="background:transparent;border:none;padding:0;color:var(--muted);font-size:13px">AKASH KUMAR GUPTA
-Data Scientist / Software Engineer
-Email: work.akashgupta2001@gmail.com
-Phone: +91 9304138792
-</pre>
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="btn" href="Akash-Kumar-Gupta.pdf" target="_blank">Download Resume</a>
-            <a class="btn btn-primary" href="mailto:work.akashgupta2001@gmail.com">Email Me</a>
-          </div>
-        </div>
-
-        <div class="card reveal" style="margin-top:16px" id="contact">
-          <h2>Contact</h2>
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a class="link" href="mailto:work.akashgupta2001@gmail.com">work.akashgupta2001@gmail.com</a></li>
-            <li><strong>Phone:</strong> +91 9304138792</li>
-            <li><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/akash-gupta-42765620a/" target="_blank">linkedin.com/in/akash-gupta-42765620a</a></li>
-            <li><strong>GitHub:</strong> <a class="link" href="https://github.com/akash-kr2812" target="_blank">github.com/akash-kr2812</a></li>
-          </ul>
 
           <div style="margin-top:12px">
-            <!-- Simple contact form via Formspree (replace action URL with your Formspree endpoint) -->
-            <form action="https://formspree.io/f/AkashGupta" method="POST" target="_blank">
-              <input type="hidden" name="_subject" value="Website Contact">
-              <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
-                <input name="name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" required>
-                <input name="email" placeholder="Your email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" required>
-                <textarea name="message" placeholder="Message" rows="3" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" required></textarea>
-                <button class="btn btn-primary" type="submit">Send Message</button>
-              </div>
-            </form>
-            <p style="color:var(--muted);font-size:12px;margin-top:8px"></p>
+            <strong>Cybersecurity Virtual Internship — Palo Alto Networks (AICTE)</strong> <span class="sub">May 2023 – Jul 2023</span>
+            <ul><li>Hands-on exposure to SIEM, threat detection & log analysis.</li></ul>
           </div>
 
-        </div>
+        </section>
 
+        <section class="card" style="margin-bottom:14px">
+          <h3>Selected Projects</h3>
+
+          <div style="margin-bottom:10px">
+            <strong>AI Demand Forecasting & Inventory Optimizer</strong> <span class="sub">Aug 2025 – Nov 2025</span>
+            <ul>
+              <li>Multi-model forecasting (ARIMA, Prophet, LSTM) + inventory engine to recommend reorder points & safety stock.</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <strong>LLM-Powered Resume & JD Matcher (RAG)</strong> <span class="sub">Mar 2025 – Jul 2025</span>
+            <ul><li>Built RAG system with FAISS + embeddings and a Streamlit UI for match scoring and skill-gap recommendations.</li></ul>
+          </div>
+
+          <div>
+            <strong>Predictive Car Price Modeling</strong> <span class="sub">Oct 2024 – Feb 2025</span>
+            <ul><li>End-to-end pipeline + web app for real-time car price predictions using Random Forest/XGBoost.</li></ul>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Education</h3>
+          <div><strong>B.Tech, Computer Science & Engineering</strong> — KIIT University (Sep 2020 – Sep 2024) <div class="sub">CGPA: 8.14/10</div></div>
+        </section>
+      </main>
+
+      <!-- Right column -->
+      <aside>
+        <section class="card">
+          <h3>Skills</h3>
+          <div>
+            <span class="skill">Python</span><span class="skill">SQL</span><span class="skill">Machine Learning</span><span class="skill">Deep Learning</span>
+            <span class="skill">Prophet</span><span class="skill">PyTorch</span><span class="skill">Scikit-Learn</span><span class="skill">OCI</span>
+            <span class="skill">Tableau</span><span class="skill">PowerBI</span><span class="skill">Streamlit</span><span class="skill">FastAPI</span>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <h3>Certifications</h3>
+          <ul style="margin:6px 0 0">
+            <li>OCI Data Science Professional — Oct 29, 2025</li>
+            <li>OCI AI Foundations Associate — Oct 28, 2025</li>
+            <li>Deloitte Cyber Simulation • Forage Experiences • Hacktoberfest contributor</li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <h3>Links</h3>
+          <ul style="margin:6px 0 0">
+            <li><a href="#" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">Portfolio Projects</a></li>
+            <li><a href="#" target="_blank">Resume PDF</a></li>
+          </ul>
+        </section>
       </aside>
-    </section>
+    </div>
 
     <footer>
-      © 2025 Akash Kumar Gupta • Built with focus on data, systems & security
+      © Akash Kumar Gupta — Built for Data Science & ML roles • Last updated: Nov 2025
     </footer>
   </div>
-
-  <div class="social-fab">
-    <a href="https://github.com/akash-kr2812" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/akash-gupta-42765620a/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-  </div>
-
-  <script>
-    // typewriter intro
-    const phrases = ['ML Engineer', 'Backend Developer', 'Cybersecurity Enthusiast', 'Cloud Practitioner'];
-    const el = document.getElementById('typewriter');
-    let ix = 0, char = 0, forward = true;
-    function type(){
-      const p = phrases[ix];
-      if(forward){
-        char++;
-        el.textContent = p.slice(0,char);
-        if(char===p.length){forward=false;setTimeout(type,1000);return}
-      } else { char--; el.textContent = p.slice(0,char); if(char===0){forward=true;ix=(ix+1)%phrases.length} }
-      setTimeout(type, forward?90:40);
-    }
-    document.addEventListener('DOMContentLoaded',()=>type());
-
-    // simple theme toggle (dark/light)
-    const themeBtn = document.getElementById('themeBtn');
-    function setLight(){
-      document.documentElement.style.setProperty('--bg-1','#f7fafc');
-      document.documentElement.style.setProperty('--bg-2','#eef2ff');
-      document.documentElement.style.setProperty('--text','#0b1220');
-      document.documentElement.style.setProperty('--muted','#475569');
-      document.documentElement.style.setProperty('--glass-border','rgba(11,17,34,0.04)');
-      localStorage.setItem('theme','light');
-      themeBtn.innerHTML='<i class="fa-regular fa-sun"></i>'
-    }
-    function setDark(){
-      document.documentElement.style.setProperty('--bg-1','#0b1020');
-      document.documentElement.style.setProperty('--bg-2','#071827');
-      document.documentElement.style.setProperty('--text','#e6eef8');
-      document.documentElement.style.setProperty('--muted','#9fb0c8');
-      document.documentElement.style.setProperty('--glass-border','rgba(255,255,255,0.06)');
-      localStorage.setItem('theme','dark');
-      themeBtn.innerHTML='<i class="fa-regular fa-moon"></i>'
-    }
-    themeBtn.addEventListener('click',()=>{ if(localStorage.getItem('theme')==='light') setDark(); else setLight(); })
-    if(localStorage.getItem('theme')==='light') setLight(); else setDark();
-
-    // reveal animations on load
-    document.addEventListener('DOMContentLoaded',()=>{
-      document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.opacity=1})
-    })
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
